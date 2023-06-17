@@ -1,18 +1,19 @@
 package org.example;
 
 public class Toy {
-    private int id;
+    private String id;
     private String name;
-    private int weight;
+    private int quantity;
+    private double frequency;
 
-    public Toy(String inputString) {
-        String[] parts = inputString.split(";");
-        this.id = Integer.parseInt(parts[0].trim());
-        this.name = parts[1].trim();
-        this.weight = Integer.parseInt(parts[2].trim());
+    public Toy(String id, String name, int quantity, double frequency) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.frequency = frequency;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -20,7 +21,21 @@ public class Toy {
         return name;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(double frequency) {
+        this.frequency = frequency;
+    }
+
+    public void decreaseQuantity() {
+        if (quantity > 0) {
+            quantity--;
+        }
     }
 }
